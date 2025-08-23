@@ -1,0 +1,129 @@
+:root {
+  --primary: chocolate;
+  --background: white;
+  --background2: #fbf3d5;
+  --secondary: gray;
+  --tertiary: rgb(255, 190, 70);
+}
+
+* {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  user-select: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: var(--background2);
+  font-weight: 1000;
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  transition: 0.2s ease;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary);
+  transition: 0.2s ease;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.transisi {
+  transition: 0.2s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  background-color: rgba(1, 1, 1, 0.5);
+  border-bottom: 0.1px solid rgba(0, 0, 0, 0.278);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  backdrop-filter: blur(3px);
+  transition: 0.3s ease-in-out;
+}
+
+.navbar.transparent {
+  background-color: transparent;
+  border-bottom: none;
+  transition: 0.3s ease-in-out;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+  text-shadow: 1px 1px 0 var(--tertiary);
+}
+
+.navbar .navigation a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  transition: 0.3s ease;
+  text-shadow: 0 0 2px black;
+}
+
+.navbar .navigation a:hover {
+  color: var(--tertiary);
+}
+
+.navbar .navigation a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navigation a:hover::after {
+  transform: scaleX(1.5);
+}
+
+.navbar .spare-navigation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar .spare-navigation a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.navbar .spare-navigation a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
