@@ -22,6 +22,34 @@ $(document).on("click", function (e) {
   }
 });
 
+// Navbar transparency on-scroll function
+$(window).on("scroll", function () {
+  const $navbar = $(".navbar");
+  const homeHeight = $(".hero").outerHeight();
+
+  if ($(window).scrollTop() < homeHeight - 100) {
+    $navbar.addClass("transparent");
+  } else {
+    $navbar.removeClass("transparent");
+  }
+});
+
+// trigger the scroll function
+$(window).trigger("scroll");
+
+// Toast function
+function showToast(message, type = "success") {
+  const $toast = $("#toast");
+  $toast
+    .removeClass("success error")
+    .addClass("show " + type)
+    .text(message);
+
+  setTimeout(() => {
+    $toast.removeClass("show");
+  }, 3000);
+}
+
 // Mail function
 function sendMail() {
   const $form = $(".contact form");
